@@ -14,6 +14,7 @@ export class PersonService {
   }
 
   createUser(person: PersonInterface): Observable<void> {
+    console.log(person);
     return this.http.post<void>(`${this.baseUrl}/person/addPerson`, person);
   }
 

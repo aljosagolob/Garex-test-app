@@ -31,6 +31,7 @@ export class HomePage {
     this.personService.getAllUsers().subscribe((personsList) => {
       this.personsList = personsList;
       this.filteredPersonsList = personsList;
+      console.log(personsList);
     });
   }
 

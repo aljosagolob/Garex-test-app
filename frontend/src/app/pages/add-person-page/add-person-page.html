@@ -69,10 +69,10 @@
       </div>
       <div class="holder">
         Phone number (optional)<input
-          name="phone"
+          name="phoneNumber"
           type="text"
           class="phone"
-          formControlName="phone"
+          formControlName="phoneNumber"
         />
       </div>
     </div>
@@ -98,7 +98,7 @@
     </div>
     <div class="controls">
       <button type="submit" class="button save">Save</button>
-      <div class="button cancel">Cancel</div>
+      <div class="button cancel" [routerLink]="['/']">Cancel</div>
     </div>
   </form>
 </section>

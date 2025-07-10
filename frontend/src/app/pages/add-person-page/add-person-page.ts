@@ -7,12 +7,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { PersonService } from '../../person.service';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-person-page',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './add-person-page.html',
   styleUrl: './add-person-page.scss',
 })
@@ -29,15 +29,16 @@ export class AddPersonPage {
       emso: ['', [Validators.required, Validators.minLength(13)]],
       dateOfBirth: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['+386'],
+      phoneNumber: ['+386'],
     });
   }
 
   onSubmit() {
     this.isSubmitted = true;
     if (this.myForm.valid) {
-      if (this.myForm.value.phone === '+386') {
-        this.myForm.value.phone = '';
+      if (this.myForm.value.phoneNumber === '+386') {
+        console.log('here');
+        this.myForm.value.phoneNumber = '';
       }
 
       this.personService.createUser(this.myForm.value).subscribe({
