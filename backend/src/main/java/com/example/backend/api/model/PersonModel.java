@@ -1,5 +1,6 @@
 package com.example.backend.api.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
@@ -25,7 +26,6 @@ public class PersonModel {
     private String phone_number;
     @Column(nullable = false, updatable = false)
     private LocalDateTime created_at;
-
 
     public PersonModel() {
     }

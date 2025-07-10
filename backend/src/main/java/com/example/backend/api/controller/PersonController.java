@@ -3,6 +3,7 @@ package com.example.backend.api.controller;
 import com.example.backend.api.model.PersonModel;
 import com.example.backend.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,8 +28,8 @@ public class PersonController {
 
     @PostMapping("/addPerson")
     public ResponseEntity<Void> addPerson(@RequestBody PersonModel person) {
-        String response = personService.addPerson(person);
-        return ResponseEntity.noContent().build();
+        personService.addPerson(person);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @DeleteMapping("/deletePerson/{id}")

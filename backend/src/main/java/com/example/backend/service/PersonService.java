@@ -20,13 +20,11 @@ public class PersonService {
         return personRepository.findAllUsers();
     }
 
-    public String addPerson(PersonModel newPerson) {
+    public void addPerson(PersonModel newPerson) {
         personRepository.addPerson(newPerson.getName(), newPerson.getLastname(), newPerson.getEmso(), newPerson.getDateOfBirth(), newPerson.getEmail(), newPerson.getPhoneNumber());
-        return "Success";
     }
 
-    public String deletePersonById(int id) {
+    public void deletePersonById(int id) {
         personRepository.deletePersonById(id);
-        return "Success";
     }
 }
