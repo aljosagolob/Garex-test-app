@@ -1,13 +1,24 @@
 # Test app for Garex
 
-Before starting, create a .env file and copy the credentials into it
+## Project stack
+
+Angular frontend
+
+Java backend using Spring Boot framework
+
+PostgreSQL database
 
 ## Instructions
 1. Clone the repository
    - in the terminal run `git clone <repo name>`
 2. Navigate into the project directory
    - `cd <repo name>`
-3. Build and start the app using docker compose
+3. Create a .env file and copy the credentials into it
+   - names should match the `example.env` template
+4. Build and start the app using docker compose
    - `docker-compose up --build -d`
-4. Access the app
+5. Access the app
    - `http://localhost:4200`
+6. Managing the app
+   - app can be started and stopped using the standard Docker Compose commands, with data persistence ensured by the PostgreSQL container:
+   - `docker-compose up -d` and `docker-compose down`
