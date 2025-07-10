@@ -19,4 +19,14 @@ public class PersonService {
     public List<PersonModel> getPersonList() {
         return personRepository.findAllUsers();
     }
+
+    public String addPerson(PersonModel newPerson) {
+        personRepository.addPerson(newPerson.getName(), newPerson.getLastname(), newPerson.getEmso(), newPerson.getDateOfBirth(), newPerson.getEmail(), newPerson.getPhoneNumber());
+        return "Success";
+    }
+
+    public String deletePersonById(int id) {
+        personRepository.deletePersonById(id);
+        return "Success";
+    }
 }
