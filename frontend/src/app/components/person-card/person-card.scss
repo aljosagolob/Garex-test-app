@@ -6,7 +6,7 @@
 }
 
 .item {
-  background: #ffffff;
+  background: var(--background-primary);
   padding: 15px;
   color: var(--text-secondary);
   display: flex;
@@ -19,6 +19,6 @@
 }
 
 .delete {
-  color: red;
+  color: var(--button-delete);
   cursor: pointer;
 }

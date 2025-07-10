@@ -7,13 +7,13 @@ main {
 header {
   height: 60px;
   display: flex;
-  background-color: #ffffff;
+  background-color: var(--background-primary);
   color: black;
   justify-content: center;
   gap: 20px;
   font-size: 20px;
   align-items: center;
-  border-bottom: 2px solid #eaeaea;
+  border-bottom: 2px solid var(--row-border);
 
   a {
     text-transform: uppercase;

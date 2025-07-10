@@ -36,7 +36,7 @@ export class PersonCard {
   }
 
   get phoneNumber(): string | undefined {
-    if (this.person().phoneNumber === null) return 'Not provided';
+    if (this.person().phoneNumber === '') return 'Not provided';
     else return this.person().phoneNumber;
   }
 

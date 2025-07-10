@@ -30,6 +30,7 @@ export class AddPersonPage {
       dateOfBirth: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['+386'],
+      createdAt: [new Date().toISOString()],
     });
   }
 
@@ -42,10 +43,12 @@ export class AddPersonPage {
       }
 
       this.personService.createUser(this.myForm.value).subscribe({
-        next: (response) => console.log('User added!', response),
+        next: (response) => {
+          this.router.navigate(['/']);
+          console.log('User added!', response);
+        },
         error: (err) => console.error('Error when adding user!', err),
       });
-      this.router.navigate(['/']);
     }
   }
 }
