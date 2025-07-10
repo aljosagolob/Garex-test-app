@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="item name">{{ person().name }} {{ person().lastname }}</div>
+  <div class="item">{{ person().emso }}</div>
+  <div class="item">{{ dateOfBirth }}</div>
+  <div class="item">{{ person().email }}</div>
+  <div class="item">{{ phoneNumber }}</div>
+  <div class="item">{{ dateOnly }}</div>
+
+  <div class="item">
+    <mat-icon class="delete" (click)="onDelete()">delete</mat-icon>
+  </div>
+</div>

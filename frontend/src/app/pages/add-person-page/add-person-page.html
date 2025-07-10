@@ -1,0 +1,39 @@
+<section class="wrapper">
+  <div class="title">Add new entry</div>
+  <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="nameLastname">
+      <div class="holder">
+        Name
+        <input type="text" class="name" formControlName="name" />
+      </div>
+      <div class="holder">
+        Last name
+        <input type="text" class="lastname" formControlName="lastname" />
+      </div>
+    </div>
+    <div class="emso">
+      <div class="holder">
+        EMSO
+        <input type="number" class="emsoInput" formControlName="emso" />
+      </div>
+    </div>
+    <div class="phoneEmail">
+      <div class="holder">
+        E-mail
+        <input type="email" class="email" formControlName="email" />
+      </div>
+      <div class="holder">
+        Phone number (optional)<input
+          name="phone"
+          type="text"
+          class="phone"
+          formControlName="phone"
+        />
+      </div>
+    </div>
+    <div class="controls">
+      <button type="submit" class="button save">Save</button>
+      <div class="button cancel">Cancel</div>
+    </div>
+  </form>
+</section>

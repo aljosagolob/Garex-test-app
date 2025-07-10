@@ -1,0 +1,29 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  height: 60px;
+  display: flex;
+  background-color: #ffffff;
+  color: black;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+  align-items: center;
+  border-bottom: 2px solid #eaeaea;
+
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.content {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding-top: 30px;
+}

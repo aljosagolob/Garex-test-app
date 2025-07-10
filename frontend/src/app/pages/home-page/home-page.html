@@ -1,0 +1,26 @@
+<section class="homeWrapper">
+  <div class="users">
+    <div>Users</div>
+    <div [routerLink]="['/addPersonPage']" class="addButton">
+      <mat-icon>person_add</mat-icon>
+      <div>Add</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="item first">Name</div>
+    <div class="item">EMSO</div>
+    <div class="item">Date of birth</div>
+    <div class="item">Email</div>
+    <div class="item">Phone number</div>
+    <div class="item">Created on</div>
+    <div class="item last"></div>
+  </div>
+
+  <app-person-card
+    class="cardWrapper"
+    *ngFor="let person of filteredPersonsList"
+    [person]="person"
+    (deleted)="handleUserDeleted($event)"
+  ></app-person-card>
+</section>

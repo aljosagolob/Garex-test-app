@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Outfit", sans-serif;
+}
+
+:root {
+  --background-primary: #ffffff;
+  --background-secondary: #f5f7f9;
+
+  --row-border: #eaeaea;
+
+  --text-primary: #000000;
+  --text-secondary: #818384;
+  --text-white: #ffffff;
+
+  --button-primary: #3061d6;
+  --button-cancel: #b90000;
+  --button-confirm: #00df00;
+}
