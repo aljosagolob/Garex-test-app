@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--background-primary);
 }
 
 .cardWrapper {
@@ -18,14 +18,14 @@
   width: 70%;
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr 1.5fr 1fr 1fr 0.3fr;
-  border: 1px solid #f5f7f9;
+  border: 1px solid var(--container-border);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 
 .item {
   padding: 15px;
-  background: #f5f7f9;
+  background: var(--background-secondary);
 }
 .item.first {
   border-top-left-radius: 15px;
@@ -47,8 +47,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3061d6;
-  color: white;
+  background-color: var(--button-primary);
+  color: var(--text-white);
   font-size: 20px;
   padding: 10px;
   border-radius: 8px;

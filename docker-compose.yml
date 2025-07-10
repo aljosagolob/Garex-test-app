@@ -9,6 +9,7 @@ services:
             POSTGRES_DB: ${POSTGRES_DB}
         volumes:
             - db:/data/postgres
+            - ./init-db:/docker-entrypoint-initdb.d
         ports:
             - "5332:5432"
         networks:
@@ -19,6 +20,38 @@ services:
             interval: 30s
             timeout: 10s
             retries: 5
+
+    frontend:
+        container_name: frontend
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+        ports:
+            - "4200:4200"
+        volumes:
+            - ./frontend:/app
+            - /app/node_modules
+        depends_on:
+            - db
+        networks:
+            - db
+
+    backend:
+        container_name: backend
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/demodb
+            SPRING_DATASOURCE_USERNAME: admin
+            SPRING_DATASOURCE_PASSWORD: admin
+        ports:
+            - "8080:8080"
+        depends_on:
+            - db
+        networks:
+            - db
+
 networks:
     db:
         driver: bridge
