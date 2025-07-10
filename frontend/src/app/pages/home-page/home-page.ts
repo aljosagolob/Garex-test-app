@@ -27,10 +27,12 @@ export class HomePage {
     });
   }
 
-  constructor() {
+  ngOnInit() {
     this.personService.getAllUsers().subscribe((personsList) => {
       this.personsList = personsList;
       this.filteredPersonsList = personsList;
     });
   }
+
+  constructor() {}
 }

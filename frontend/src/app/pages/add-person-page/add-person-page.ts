@@ -7,10 +7,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { PersonService } from '../../person.service';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-person-page',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './add-person-page.html',
   styleUrl: './add-person-page.scss',
 })
@@ -18,25 +20,21 @@ export class AddPersonPage {
   myForm: FormGroup;
   personService: PersonService = inject(PersonService);
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  isSubmitted = false;
+
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.myForm = this.formBuilder.group({
       name: ['', Validators.required],
       lastname: ['', Validators.required],
-      emso: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(13),
-          Validators.maxLength(13),
-        ],
-      ],
-      dateOfBirth: ['2000-01-01'],
+      emso: ['', [Validators.required, Validators.minLength(13)]],
+      dateOfBirth: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['+386'],
     });
   }
 
   onSubmit() {
+    this.isSubmitted = true;
     if (this.myForm.valid) {
       if (this.myForm.value.phone === '+386') {
         this.myForm.value.phone = '';
@@ -46,6 +44,7 @@ export class AddPersonPage {
         next: (response) => console.log('User added!', response),
         error: (err) => console.error('Error when adding user!', err),
       });
+      this.router.navigate(['/']);
     }
   }
 }

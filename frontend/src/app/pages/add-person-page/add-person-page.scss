@@ -24,7 +24,8 @@
 }
 
 .nameLastname,
-.phoneEmail {
+.phoneEmail,
+.birthDate {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -35,7 +36,8 @@
 .lastname,
 .email,
 .phone,
-.emsoInput {
+.emsoInput,
+.date {
   width: 100%;
   height: 40px;
 }
@@ -78,4 +80,8 @@ input {
 }
 .cancel {
   background-color: var(--button-cancel);
+}
+
+.error {
+  color: red;
 }
