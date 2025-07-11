@@ -13,8 +13,7 @@ PostgreSQL database
    - in the terminal run `git clone <repo name>`
 2. Navigate into the project directory
    - `cd <repo name>`
-3. Create a .env file and copy the credentials into it
-   - names should match the `example.env` template
+3. Create a file named .env and copy the credentials into it
 4. Build and start the app using docker compose
    - `docker-compose up --build -d`
 5. Access the app
